@@ -5,14 +5,25 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "api": "node server/index.cjs",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview"
   },
   "dependencies": {
+    "@heroicons/react": "^2.2.0",
+    "antd": "^6.1.0",
+    "await-to-js": "^3.0.0",
+    "axios": "^1.13.2",
+    "cors": "^2.8.5",
+    "express": "^5.2.1",
+    "mobx": "^6.15.0",
+    "mobx-react-lite": "^4.1.1",
+    "multer": "^2.0.2",
     "ogl": "^1.0.11",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
+    "react-router-dom": "^7.10.1",
     "sass": "^1.95.1"
   },
   "devDependencies": {
@@ -25,6 +36,7 @@
     "eslint-plugin-react-hooks": "^7.0.1",
     "eslint-plugin-react-refresh": "^0.4.24",
     "globals": "^16.5.0",
+    "json-server": "^1.0.0-beta.3",
     "typescript": "~5.9.3",
     "typescript-eslint": "^8.46.4",
     "vite": "^7.2.4"

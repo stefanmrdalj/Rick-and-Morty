@@ -2,4 +2,133 @@
   height: 100%;
   width: 100%;
   background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .logInForm {
+    padding: 0px 25px;
+    position: relative;
+    z-index: 1;
+    border-radius: 15px;
+    background: rgba(122, 122, 123, 0.6);
+    backdrop-filter: blur(10px);
+    box-shadow: 0px 0px 15px 3px white;
+    max-width: 60%;
+    overflow: auto;
+
+    h1 {
+      color: white;
+      text-align: center;
+      font-family: fontNaslov;
+    }
+
+    .form-input-wrapper {
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid white;
+      // padding-bottom: 3px;
+      font-family: fontText;
+
+      .ant-input {
+        background-color: transparent !important;
+        border: none !important;
+        outline: none !important;
+        color: white !important;
+        font-family: fontText !important;
+        padding: 0px !important;
+
+        &::placeholder {
+          color: white;
+          opacity: 0.7;
+        }
+      }
+
+      svg {
+        color: white;
+        height: 1.7rem;
+      }
+    }
+
+    .ant-form-item-explain-error {
+      text-align: right;
+      font-size: 0.65rem;
+      color: #ff4d4d;
+      margin-top: 2px;
+      margin-bottom: 5px;
+    }
+
+    .ant-input:focus,
+    .ant-input-focused,
+    .ant-input-affix-wrapper:focus,
+    .ant-input-affix-wrapper-focused {
+      box-shadow: none !important;
+      outline: none !important;
+    }
+
+    .form-button {
+      text-align: center;
+
+      button {
+        width: 100%;
+        font-size: 1rem;
+        padding: 7px 0px;
+        border-radius: 20px;
+        border: none;
+        font-family: fontText;
+        background-color: #3c54b1;
+        color: white;
+      }
+
+      button:hover {
+        background-color: #546bc4;
+      }
+    }
+
+    .form-account-register {
+      margin-bottom: 20px;
+      font-size: 0.7rem;
+      text-align: center;
+      color: white;
+      font-family: fontText;
+
+      :nth-child(2) {
+        font-weight: bold;
+        font-size: 0.8rem;
+        cursor: pointer;
+      }
+    }
+    .uploadRow {
+      text-align: right;
+      font-family: fontText;
+
+      button:hover {
+        color: #3c54b1;
+        border: 1px solid #3c54b1;
+      }
+    }
+
+    .uploadRow {
+      text-align: right;
+      font-family: fontText;
+
+      .ant-upload-icon span {
+        display: none;
+      }
+
+      .ant-upload-list-item-name {
+        color: white;
+        font-size: 0.65rem;
+        font-family: fontText;
+      }
+
+      .ant-upload-list-item {
+        margin-top: 4px;
+      }
+
+      .ant-upload-list-item-actions {
+        display: none;
+      }
+    }
+  }
 }

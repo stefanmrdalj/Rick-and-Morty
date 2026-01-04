@@ -1,0 +1,40 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "firstName": "Stefan",
+      "lastName": "Mrdalj",
+      "email": "stefan@mail.com",
+      "username": "stefan",
+      "password": "Developer1",
+      "photo": ""
+    },
+    {
+      "firstName": "Nikola",
+      "lastName": "Mrdalj",
+      "email": "nikola@gmail.com",
+      "username": "nikola",
+      "password": "Developer2",
+      "photo": "/uploads/1766679021595-images.png",
+      "id": "H0IDt5L"
+    },
+    {
+      "firstName": "Ema",
+      "lastName": "Mrdalj",
+      "email": "emamrdalj@gmail.com",
+      "username": "ema",
+      "password": "Developer3",
+      "photo": "/uploads/morty.png",
+      "id": "Re32eAa"
+    },
+    {
+      "firstName": "Nebojsa",
+      "lastName": "Mrdalj",
+      "email": "nebojsa@gmail.com",
+      "username": "nebojsa",
+      "password": "Developer4",
+      "photo": "/uploads/1766679884030-summer.jpg",
+      "id": "O9VO05b"
+    }
+  ]
+}
