@@ -1,0 +1,36 @@
+.header {
+  width: 100%;
+  // border-bottom: 1px solid white;
+  display: flex;
+  padding: 0px 15px;
+  padding-top: 40px;
+  padding-bottom: 50px;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+
+  .headerUser {
+    height: 40px;
+    width: 40px;
+    border: 2px solid white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+    }
+  }
+  .headerMenu {
+    svg {
+      color: white;
+      height: 30px;
+      // border: 1px solid white;
+      border-radius: 50%;
+      padding: 5px;
+      background-color: #2d2f3f;
+    }
+  }
+}

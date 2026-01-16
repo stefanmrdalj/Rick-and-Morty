@@ -1,0 +1,110 @@
+.content-wrapper {
+  flex: 1;
+  min-height: 0;
+  padding-top: 15px;
+  display: flex;
+  flex-direction: column;
+  .content-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h1 {
+      color: white;
+      font-family: fontNaslov;
+      font-size: 25px;
+      text-align: center;
+    }
+
+    .content-search {
+      display: flex;
+      align-items: center;
+      padding: 5px 10px;
+      box-sizing: border-box;
+      background: linear-gradient(to right, #12444e, #303444, #23243b);
+      width: 90%;
+      border-radius: 15px;
+      border: 1px solid transparent;
+      background: linear-gradient(to right, #12444e, #303444, #23243b)
+          padding-box,
+        linear-gradient(to right, #48859d, #636883) border-box;
+
+      svg {
+        height: 25px;
+        color: white;
+      }
+      input {
+        background-color: transparent;
+        border: none;
+        outline: none;
+        box-shadow: none;
+        color: white;
+        font-family: fontText;
+
+        &::placeholder {
+          color: white;
+        }
+        &:focus {
+          outline: none;
+          box-shadow: none;
+        }
+      }
+    }
+  }
+  .content-body {
+    width: 90%;
+    margin: 0px auto;
+    margin-top: 30px;
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+
+    .content {
+      flex: 1;
+      min-height: 0;
+      display: flex;
+      flex-direction: column;
+      h2 {
+        font-family: fontText;
+        color: white;
+        font-size: 1.2em;
+        text-align: center;
+      }
+      .characters {
+        flex: 1;
+        min-height: 0;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .character-card {
+          width: 65%;
+          border-radius: 20px;
+          border: 1px solid white;
+          margin-bottom: 15px;
+          display: flex;
+          flex-direction: column;
+          img {
+            width: 100%;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+          }
+          .character-name {
+            background-color: white;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            text-align: center;
+            font-family: fontText;
+          }
+        }
+      }
+    }
+    .pagination {
+      display: flex;
+      justify-content: center;
+      margin-top: 30px;
+      margin-bottom: 20px;
+    }
+  }
+}
