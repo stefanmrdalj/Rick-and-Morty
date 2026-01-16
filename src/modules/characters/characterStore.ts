@@ -13,8 +13,14 @@ class CharacterStore {
   totalCharacters = 0;
   totalPages = 0;
 
+  searchText = "";
+
   constructor() {
     makeAutoObservable(this);
+  }
+
+  setSearchText(value: string) {
+    this.searchText = value;
   }
 
   async getCharacters(page = this.currentPage) {
@@ -22,7 +28,10 @@ class CharacterStore {
     this.loadingCharactersErrorMessage = null;
 
     try {
-      const data = await characterService.getCharacters(page);
+      const data = await characterService.getCharacters({
+        page,
+        name: this.searchText.trim() || undefined,
+      });
       this.allCharacters = data.results;
       this.currentPage = page;
       this.totalCharacters = data.info.count;
@@ -33,6 +42,16 @@ class CharacterStore {
       this.isLoadingCharacters = false;
     }
   }
+
+  async searchCharacters(value: string) {
+    this.setSearchText(value);
+    await this.getCharacters(1);
+  }
+
+  get shouldShowPagination() {
+    return this.totalCharacters > 0;
+  }
+
   get pageSize() {
     return CHARACTERS_PER_PAGE;
   }

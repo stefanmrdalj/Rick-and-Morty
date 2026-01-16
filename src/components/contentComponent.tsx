@@ -9,20 +9,16 @@ const Content = observer(() => {
     characterStore.getCharacters(1);
   }, []);
 
-  if (characterStore.isLoadingCharacters) {
-    return <div>Loading characters...</div>;
-  }
-
-  if (characterStore.loadingCharactersErrorMessage) {
-    return <div>{characterStore.loadingCharactersErrorMessage}</div>;
-  }
-
   return (
     <div className="content-wrapper">
       <div className="content-header">
         <h1>Character explorer</h1>
         <div className="content-search">
-          <Input placeholder="Search characters..." />
+          <Input
+            placeholder="Search characters..."
+            value={characterStore.searchText}
+            onChange={(e) => characterStore.searchCharacters(e.target.value)}
+          />
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -39,31 +35,53 @@ const Content = observer(() => {
           </svg>
         </div>
       </div>
+
       <div className="content-body">
         <div className="content">
           <div>
             <h2>All characters</h2>
           </div>
+
           <div className="characters">
-            {characterStore.allCharacters.map((character) => (
-              <div className="character-card" key={character.id}>
-                <img src={character.image} alt={character.name} />
-                <div className="character-name">
-                  <p>{character.name}</p>
+            {characterStore.isLoadingCharacters && (
+              <div>Loading characters...</div>
+            )}
+
+            {!characterStore.isLoadingCharacters &&
+              characterStore.loadingCharactersErrorMessage && (
+                <div>{characterStore.loadingCharactersErrorMessage}</div>
+              )}
+
+            {!characterStore.isLoadingCharacters &&
+              !characterStore.loadingCharactersErrorMessage &&
+              characterStore.allCharacters.length === 0 && (
+                <div>No characters found</div>
+              )}
+
+            {!characterStore.isLoadingCharacters &&
+              !characterStore.loadingCharactersErrorMessage &&
+              characterStore.allCharacters.map((character) => (
+                <div className="character-card" key={character.id}>
+                  <img src={character.image} alt={character.name} />
+                  <div className="character-name">
+                    <p>{character.name}</p>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
           </div>
         </div>
-        <div className="pagination">
-          <Pagination
-            current={characterStore.currentPage}
-            total={characterStore.totalCharacters}
-            pageSize={characterStore.pageSize}
-            onChange={(page) => characterStore.getCharacters(page)}
-            showSizeChanger={false}
-          />
-        </div>
+
+        {characterStore.totalCharacters > 0 && (
+          <div className="pagination">
+            <Pagination
+              current={characterStore.currentPage}
+              total={characterStore.totalCharacters}
+              pageSize={characterStore.pageSize}
+              onChange={(page) => characterStore.getCharacters(page)}
+              showSizeChanger={false}
+            />
+          </div>
+        )}
       </div>
     </div>
   );
