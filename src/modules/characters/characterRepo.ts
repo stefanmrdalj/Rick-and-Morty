@@ -1,11 +1,13 @@
 import charactersAxiosInstance from "../../api/charactersAxiosInstance";
 import type { AxiosResponse } from "axios";
-import type { CharactersResponse } from "./characterType";
+import type { CharactersResponse, CharacterParameters } from "./characterType";
 
 class CharacterRepo {
-  getCharacters(page = 1): Promise<AxiosResponse<CharactersResponse>> {
+  getCharacters(
+    params: CharacterParameters
+  ): Promise<AxiosResponse<CharactersResponse>> {
     return charactersAxiosInstance.get("/character", {
-      params: { page },
+      params: { page: params.page, name: params.name || undefined },
     });
   }
 }

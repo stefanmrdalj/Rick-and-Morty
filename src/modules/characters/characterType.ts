@@ -24,3 +24,8 @@ export interface CharactersResponse {
   info: CharactersPaginationInfo;
   results: Character[];
 }
+
+export interface CharacterParameters {
+  page: number;
+  name?: string;
+}

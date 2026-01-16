@@ -1,10 +1,12 @@
 import to from "await-to-js";
 import { characterRepository } from "./characterRepo";
-import type { CharactersResponse } from "./characterType";
+import type { CharactersResponse, CharacterParameters } from "./characterType";
 
 class CharacterService {
-  async getCharacters(page = 1): Promise<CharactersResponse> {
-    const [err, res] = await to(characterRepository.getCharacters(page));
+  async getCharacters(
+    params: CharacterParameters
+  ): Promise<CharactersResponse> {
+    const [err, res] = await to(characterRepository.getCharacters(params));
     if (err) {
       throw new Error("Error fetching characters");
     }

@@ -105,6 +105,14 @@
       justify-content: center;
       margin-top: 30px;
       margin-bottom: 20px;
+
+      .ant-pagination-item-ellipsis {
+        color: white;
+      }
+
+      svg {
+        color: white;
+      }
     }
   }
 }
