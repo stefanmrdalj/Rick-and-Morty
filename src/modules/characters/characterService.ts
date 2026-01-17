@@ -8,7 +8,7 @@ class CharacterService {
   ): Promise<CharactersResponse> {
     const [err, res] = await to(characterRepository.getCharacters(params));
     if (err) {
-      throw new Error("Error fetching characters");
+      throw err;
     }
     return res.data;
   }

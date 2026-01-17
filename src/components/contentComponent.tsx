@@ -1,8 +1,10 @@
-import { Input, Pagination } from "antd";
+import { Input, Pagination, Spin, Result } from "antd";
 import "../styles/contentComponent.scss";
 import { characterStore } from "../modules/characters/characterStore";
 import { useEffect } from "react";
 import { observer } from "mobx-react-lite";
+import Lottie from "lottie-react";
+import mortyCry from "../assets/animations/morty-cry.json";
 
 const Content = observer(() => {
   useEffect(() => {
@@ -44,18 +46,41 @@ const Content = observer(() => {
 
           <div className="characters">
             {characterStore.isLoadingCharacters && (
-              <div>Loading characters...</div>
+              <div className="loading-characters">
+                <div className="loading-spin">
+                  <Spin size="large" />
+                </div>
+                <div>
+                  <p>Loading characters...</p>
+                </div>
+              </div>
             )}
 
             {!characterStore.isLoadingCharacters &&
               characterStore.loadingCharactersErrorMessage && (
-                <div>{characterStore.loadingCharactersErrorMessage}</div>
+                // <div>{characterStore.loadingCharactersErrorMessage}</div>
+                <Result
+                  status="error"
+                  title="Unable to load characters"
+                  subTitle="Please try again later."
+                />
               )}
 
             {!characterStore.isLoadingCharacters &&
               !characterStore.loadingCharactersErrorMessage &&
               characterStore.allCharacters.length === 0 && (
-                <div>No characters found</div>
+                <div className="no-characters-found">
+                  <div className="no-characters-found-animation">
+                    <Lottie
+                      animationData={mortyCry}
+                      style={{ width: 90, height: 90 }}
+                      loop={false}
+                    />
+                  </div>
+                  <div>
+                    <p>No characters found</p>
+                  </div>
+                </div>
               )}
 
             {!characterStore.isLoadingCharacters &&
