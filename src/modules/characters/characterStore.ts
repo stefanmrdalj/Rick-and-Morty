@@ -36,7 +36,15 @@ class CharacterStore {
       this.currentPage = page;
       this.totalCharacters = data.info.count;
       this.totalPages = data.info.pages;
-    } catch (error) {
+    } catch (error: any) {
+      if (error?.response?.status === 404) {
+        this.allCharacters = [];
+        this.currentPage = 1;
+        this.totalCharacters = 0;
+        this.totalPages = 0;
+        this.loadingCharactersErrorMessage = null;
+        return;
+      }
       this.loadingCharactersErrorMessage = "Failed to load characters";
     } finally {
       this.isLoadingCharacters = false;

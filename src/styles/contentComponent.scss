@@ -98,6 +98,48 @@
             font-family: fontText;
           }
         }
+
+        .ant-result {
+          .ant-result-icon {
+            span {
+              svg {
+                color: white;
+              }
+            }
+          }
+          .ant-result-title {
+            font-family: fontText;
+            color: white;
+            font-size: 1.3em;
+          }
+          .ant-result-subtitle {
+            font-family: fontText;
+            color: white;
+          }
+        }
+
+        .loading-characters {
+          font-family: fontText;
+          color: white;
+          .loading-spin {
+            display: flex;
+            justify-content: center;
+            padding-top: 5px;
+            .ant-spin-dot {
+              color: white;
+            }
+          }
+        }
+
+        .no-characters-found {
+          font-family: fontText;
+          color: white;
+          font-size: 1.3em;
+          .no-characters-found-animation {
+            display: flex;
+            justify-content: center;
+          }
+        }
       }
     }
     .pagination {
