@@ -32,5 +32,23 @@
       padding: 5px;
       background-color: #2d2f3f;
     }
+
+    .headerMenuButton {
+      background: transparent !important;
+      border: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+    }
+  }
+}
+
+.ant-dropdown ul {
+  border: 1px solid #3374c3 !important;
+  background-color: #112a3e !important;
+
+  li {
+    color: white !important;
   }
 }

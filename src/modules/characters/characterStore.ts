@@ -15,6 +15,9 @@ class CharacterStore {
 
   searchText = "";
 
+  isCharacterModalOpen = false;
+  selectedCharacter: Character | null = null;
+
   constructor() {
     makeAutoObservable(this);
   }
@@ -54,6 +57,16 @@ class CharacterStore {
   async searchCharacters(value: string) {
     this.setSearchText(value);
     await this.getCharacters(1);
+  }
+
+  openCharacterModal(character: Character) {
+    this.selectedCharacter = character;
+    this.isCharacterModalOpen = true;
+  }
+
+  closeCharacterModal() {
+    this.selectedCharacter = null;
+    this.isCharacterModalOpen = false;
   }
 
   get shouldShowPagination() {
