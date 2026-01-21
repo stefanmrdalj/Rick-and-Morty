@@ -4,9 +4,13 @@ import { getFileUrl } from "../utils/fileUrl";
 import ".././styles/header.scss";
 import { Dropdown } from "antd";
 import type { MenuProps } from "antd";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const Header = observer(() => {
+  const navigate = useNavigate();
+  const location = useLocation();
   const user = authStore.loggedInUser;
+  const isFavoritesPage = location.pathname === "/favorites";
 
   if (!user) {
     return <div className="header" />;
@@ -14,14 +18,21 @@ const Header = observer(() => {
 
   const onMenuItemClick: MenuProps["onClick"] = ({ key }) => {
     if (key === "favorites") {
-      // navigate to favorites
+      navigate("/favorites");
+      return;
+    }
+    if (key === "home") {
+      navigate("/home");
+      return;
     }
     if (key === "logout") {
       authStore.logOut();
     }
   };
   const menuItems: MenuProps["items"] = [
-    { key: "favorites", label: "Favorites" },
+    isFavoritesPage
+      ? { key: "home", label: "Home" }
+      : { key: "favorites", label: "Favorites" },
     { key: "logout", label: "Log out" },
   ];
 

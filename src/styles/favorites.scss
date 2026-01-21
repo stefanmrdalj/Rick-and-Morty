@@ -1,0 +1,51 @@
+.favoritesContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin: 0px auto;
+  min-height: 0;
+
+  .favorites-title {
+    text-align: center;
+    font-family: fontNaslov;
+    color: white;
+  }
+  .favorite-characters {
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10px;
+
+    .character-card {
+      width: 65%;
+      border-radius: 20px;
+      // border: 1px solid white;
+      box-shadow: 0px 0px 10px 1px white;
+      margin-bottom: 20px;
+      display: flex;
+      flex-direction: column;
+      img {
+        width: 100%;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+      }
+      .character-name {
+        background-color: white;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        text-align: center;
+        font-family: fontText;
+      }
+    }
+    .no-favorites {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: white;
+      font-family: fontText;
+      padding-top: 30px;
+    }
+  }
+}

@@ -40,6 +40,7 @@ class AuthStore {
     this.loggedInUser = null;
     this.loginErrorMessage = null;
     localStorage.removeItem(AUTH_STORAGE_KEY);
+    localStorage.removeItem("favorites");
   }
   // authStore.ts
   async register(user: AuthFormData, profilePhotoFile?: File) {
@@ -49,17 +50,17 @@ class AuthStore {
     const [checkError, checkResult] = await to(
       (async () => {
         const [usernameTakenError, usernameTaken] = await to(
-          authService.isUsernameTaken(user.username ?? "")
+          authService.isUsernameTaken(user.username ?? ""),
         );
         if (usernameTakenError) throw usernameTakenError;
 
         const [emailTakenError, emailTaken] = await to(
-          authService.isEmailTaken(user.email ?? "")
+          authService.isEmailTaken(user.email ?? ""),
         );
         if (emailTakenError) throw emailTakenError;
 
         return { usernameTaken, emailTaken };
-      })()
+      })(),
     );
 
     if (checkError) {
@@ -84,7 +85,7 @@ class AuthStore {
     let photoUrl = "/uploads/morty.png";
     if (profilePhotoFile) {
       const [uploadError, uploadResult] = await to(
-        authService.uploadProfilePhoto(profilePhotoFile)
+        authService.uploadProfilePhoto(profilePhotoFile),
       );
 
       if (uploadError || !uploadResult?.photoUrl) {
