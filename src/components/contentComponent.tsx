@@ -90,7 +90,9 @@ const Content = observer(() => {
                   key={character.id}
                   onClick={() => characterStore.openCharacterModal(character)}
                 >
-                  <img src={character.image} alt={character.name} />
+                  <div className="character-photo">
+                    <img src={character.image} alt={character.name} />
+                  </div>
                   <div className="character-name">
                     <p>{character.name}</p>
                   </div>
