@@ -82,7 +82,7 @@ class AuthStore {
     }
 
     // Upload photo (optional)
-    let photoUrl = "/uploads/morty.png";
+    let photoUrl = "/uploads/image4.jpg";
     if (profilePhotoFile) {
       const [uploadError, uploadResult] = await to(
         authService.uploadProfilePhoto(profilePhotoFile),

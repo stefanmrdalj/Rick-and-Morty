@@ -1,7 +1,7 @@
 const API_BASE_URL = "http://localhost:3001";
 
 export const getFileUrl = (filePath?: string) => {
-  const defaultPhotoPath = "/uploads/morty.png";
+  const defaultPhotoPath = "/uploads/image4.jpg";
 
   const safePath =
     filePath && filePath.trim().length > 0 ? filePath : defaultPhotoPath;

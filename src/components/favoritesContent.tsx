@@ -22,7 +22,7 @@ const FavoritesContent = () => {
           <div className="no-favorites">
             <Lottie
               animationData={rick}
-              style={{ width: 160, height: 160 }}
+              style={{ width: "100%", height: 160 }}
               // loop={false}
             />
             <p>Add your favorite characters!</p>
@@ -34,7 +34,9 @@ const FavoritesContent = () => {
               className="character-card"
               onClick={() => characterStore.openCharacterModal(character)}
             >
-              <img src={character.image} alt={character.name} />
+              <div className="character-photo">
+                <img src={character.image} alt={character.name} />
+              </div>
               <div className="character-name">
                 <p>{character.name}</p>
               </div>

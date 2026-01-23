@@ -4,7 +4,7 @@ import type { CharactersResponse, CharacterParameters } from "./characterType";
 
 class CharacterService {
   async getCharacters(
-    params: CharacterParameters
+    params: CharacterParameters,
   ): Promise<CharactersResponse> {
     const [err, res] = await to(characterRepository.getCharacters(params));
     if (err) {
