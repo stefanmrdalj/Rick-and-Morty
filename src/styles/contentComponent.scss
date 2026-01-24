@@ -11,7 +11,7 @@
     h1 {
       color: white;
       font-family: fontNaslov;
-      font-size: 25px;
+      font-size: 22px;
       text-align: center;
     }
 
@@ -67,7 +67,7 @@
       h2 {
         font-family: fontText;
         color: white;
-        font-size: 1.2em;
+        font-size: 18px;
         text-align: center;
       }
       .characters {
@@ -104,7 +104,7 @@
             border-bottom-right-radius: 20px;
             text-align: center;
             font-family: fontText;
-            font-size: 0.7em;
+            font-size: 12px;
             flex-grow: 1;
           }
         }
@@ -122,16 +122,18 @@
           .ant-result-title {
             font-family: fontText;
             color: white;
-            font-size: 1.3em;
+            font-size: 18px;
           }
           .ant-result-subtitle {
             font-family: fontText;
             color: white;
+            font-size: 14px;
           }
         }
 
         .loading-characters {
           font-family: fontText;
+          font-size: 16px;
           color: white;
           grid-column: 1 / -1;
           justify-self: center;
@@ -148,7 +150,7 @@
         .no-characters-found {
           font-family: fontText;
           color: white;
-          font-size: 1.3em;
+          font-size: 17px;
           grid-column: 1 / -1;
           justify-self: center;
           .no-characters-found-animation {
@@ -163,11 +165,62 @@
       justify-content: center;
       margin-top: 30px;
       margin-bottom: 20px;
+      transform: scale(0.85);
       .ant-pagination-item-ellipsis {
         color: white;
       }
       svg {
         color: white;
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .content-wrapper {
+    .content-header {
+      h1 {
+        font-size: 25px;
+      }
+      .content-search {
+        width: 60%;
+      }
+    }
+    .content-body {
+      margin-top: 40px;
+      .content {
+        h2 {
+          font-size: 21px;
+        }
+        .characters {
+          padding-top: 15px;
+          padding-bottom: 20px;
+          grid-template-columns: repeat(4, 1fr);
+          row-gap: 30px;
+
+          .character-card {
+            .character-name {
+              font-size: 14px;
+            }
+          }
+          .loading-characters {
+            font-size: 22px;
+          }
+          .no-characters-found {
+            font-size: 22px;
+          }
+          .ant-result {
+            .ant-result-title {
+              font-size: 21px;
+            }
+            .ant-result-subtitle {
+              font-size: 17px;
+            }
+          }
+        }
+      }
+      .pagination {
+        transform: scale(0.95);
       }
     }
   }

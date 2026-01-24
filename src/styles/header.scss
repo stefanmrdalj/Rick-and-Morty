@@ -1,6 +1,5 @@
 .header {
   width: 100%;
-  // border-bottom: 1px solid white;
   display: flex;
   padding: 0px 15px;
   padding-top: 40px;
@@ -27,7 +26,6 @@
     svg {
       color: white;
       height: 30px;
-      // border: 1px solid white;
       border-radius: 50%;
       padding: 5px;
       background-color: #2d2f3f;
@@ -50,5 +48,22 @@
 
   li {
     color: white !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .header {
+    padding: 0px 20px;
+    padding-top: 40px;
+    padding-bottom: 50px;
+    .headerUser {
+      height: 55px;
+      width: 55px;
+    }
+    .headerMenu {
+      svg {
+        height: 45px;
+      }
+    }
   }
 }
