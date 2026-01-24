@@ -22,8 +22,9 @@ const FavoritesContent = () => {
           <div className="no-favorites">
             <Lottie
               animationData={rick}
-              style={{ width: "100%", height: 160 }}
+              style={{ width: "100%", height: 120 }}
               // loop={false}
+              className="rick"
             />
             <p>Add your favorite characters!</p>
           </div>

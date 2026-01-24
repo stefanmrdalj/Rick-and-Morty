@@ -3,6 +3,13 @@
   justify-content: center;
   align-items: center;
   font-family: fontText;
+  font-size: 17px;
   color: white;
   background: linear-gradient(to right, #0e273e, #306c59, #0c263d);
+}
+
+@media (min-width: 768px) {
+  .footer {
+    font-size: 21px;
+  }
 }
