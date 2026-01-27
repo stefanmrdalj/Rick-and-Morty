@@ -87,3 +87,26 @@
     }
   }
 }
+
+@media (min-width: 1024px) {
+  /* laptop overrides */
+  .favoritesContent {
+    .favorites-title {
+      font-size: 16px;
+    }
+    .favorite-characters {
+      grid-template-columns: repeat(5, 1fr);
+
+      .no-favorites {
+        padding-top: 60px;
+
+        .rick {
+          height: 180px !important;
+        }
+        p {
+          font-size: 22px;
+        }
+      }
+    }
+  }
+}

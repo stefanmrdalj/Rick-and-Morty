@@ -57,12 +57,29 @@
     padding-top: 40px;
     padding-bottom: 50px;
     .headerUser {
-      height: 55px;
-      width: 55px;
+      height: 45px;
+      width: 45px;
     }
     .headerMenu {
       svg {
-        height: 45px;
+        height: 40px;
+      }
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .header {
+    padding: 0px 25px;
+    padding-top: 40px;
+    padding-bottom: 50px;
+    .headerUser {
+      height: 50px;
+      width: 50px;
+    }
+    .headerMenu {
+      svg {
+        height: 42px;
       }
     }
   }
