@@ -29,7 +29,7 @@
         linear-gradient(to right, #48859d, #636883) border-box;
 
       svg {
-        height: 25px;
+        height: 22px;
         color: white;
       }
       input {
@@ -180,10 +180,14 @@
   .content-wrapper {
     .content-header {
       h1 {
-        font-size: 25px;
+        font-size: 24px;
       }
       .content-search {
         width: 60%;
+        svg {
+          height: 22px;
+          color: white;
+        }
       }
     }
     .content-body {
@@ -221,6 +225,49 @@
       }
       .pagination {
         transform: scale(0.95);
+      }
+    }
+  }
+}
+@media (min-width: 1024px) {
+  .content-wrapper {
+    .content-header {
+      h1 {
+        font-size: 25px;
+      }
+      .content-search {
+        width: 50%;
+        svg {
+          height: 24px;
+          color: white;
+        }
+      }
+    }
+    .content-body {
+      margin-top: 15px;
+      .content {
+        .characters {
+          grid-template-columns: repeat(5, 1fr);
+          .character-card {
+            .character-name {
+              font-size: 15px;
+            }
+          }
+          .loading-characters {
+            font-size: 23px;
+          }
+          .no-characters-found {
+            font-size: 23px;
+          }
+          .ant-result {
+            .ant-result-title {
+              font-size: 22px;
+            }
+            .ant-result-subtitle {
+              font-size: 18px;
+            }
+          }
+        }
       }
     }
   }
